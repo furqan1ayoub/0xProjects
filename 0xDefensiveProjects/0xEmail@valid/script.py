@@ -12,7 +12,7 @@ def argumentAccepter():
 def main():
     args = argumentAccepter()
     
-    if not args.file and not args.email:
+    if not args.file or  not args.email:
         sys.exit("❌ No arguments entered. Please provide -f or -e.")
     
     if args.file:
@@ -51,7 +51,7 @@ def parseFile(filename, savetoFile=None):
         print("⚠️ Error:", e)
 
 def emailChecker(email):
-    if "@" not in email or email.count("@") != 1:
+    if "@" not in email or email.count("@") != 1 or email.count(".") != 1:
         return False
     if any(c in email for c in '/!#$%^&*()-+=[]{}|~`"'):
         return False

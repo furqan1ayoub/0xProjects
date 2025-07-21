@@ -42,4 +42,5 @@ def main():
             except Exception as fe:print("ERROR - ",fe)
         else:sys.exit("EITHER PASSWORD OR USERNAME FILE DOESN'T EXIST.")
 
-main()
+if __name__ == "__main__":
+    main()
